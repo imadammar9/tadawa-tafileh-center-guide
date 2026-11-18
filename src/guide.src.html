@@ -552,6 +552,96 @@ html,body{overscroll-behavior:none}
   .logos{grid-template-columns:repeat(3,minmax(0,1fr))}
   .grid2.wide{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+
+/* ---- v2: art on every screen ---- */
+.hide{display:none}
+.s.cover3{grid-template-rows:minmax(0,36%) minmax(0,1fr)}
+.s.cover3 .art::after{background:linear-gradient(rgba(10,52,61,.5),rgba(10,52,61,0) 30%,rgba(10,52,61,0) 62%,#0e4a56 100%)}
+.s.cover3{background:linear-gradient(#0e4a56,#0b3d47)}
+.s.cover3 .swipe{margin-top:0}
+.s.full.dark .tile{background:rgba(255,255,255,.1);color:var(--white);box-shadow:none;border:1px solid rgba(255,255,255,.14)}
+.s.full.dark .tile i{background:var(--white);color:var(--teal-deep)}
+.s.full.dark .tile small{color:var(--on-brand-muted)}
+/* hours */
+.s.hours2{grid-template-rows:minmax(0,40%) minmax(0,1fr)}
+.s.hours2 .art{display:grid;place-items:center;padding:52px 24px 6px}
+.clockwrap{position:relative;height:100%;aspect-ratio:1;max-width:100%;max-height:100%}
+.clockwrap .clock{position:absolute;inset:0;height:100%;width:100%;max-width:none;max-height:none;filter:drop-shadow(0 18px 36px rgba(4,30,36,.5))}
+.clockwrap .sun,.clockwrap .moon{position:absolute;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;font-size:26px;z-index:1;box-shadow:0 8px 20px rgba(4,30,36,.35)}
+.clockwrap .sun{bottom:6%;inset-inline-end:-2%;background:#f2d6b8;color:#c9772f;animation:bob 4s var(--ease) infinite}
+.clockwrap .moon{top:2%;inset-inline-start:-2%;background:#0a343d;color:#dcedf1;border:1.5px solid var(--border-on-brand);animation:bob 4s var(--ease) 2s infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.s.hours2 .days span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18)}
+.s.hours2 .arc{stroke-dasharray:0 527.79;transition:stroke-dasharray 1.2s var(--ease) .2s}
+.s.hours2.on .arc{stroke-dasharray:351.86 527.79}
+button.callout{border:0;font:inherit;text-align:start;cursor:pointer}
+/* team */
+.s.team2{grid-template-rows:minmax(0,40%) minmax(0,1fr)}
+.stats.s4{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.stats.s4 .stat{padding:9px 6px;text-align:center;justify-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);color:var(--white)}
+.stats.s4 .stat b{color:var(--white);font-size:22px;justify-self:center}
+.stats.s4 .stat span{font-size:11px;color:var(--on-brand-muted);line-height:1.35}
+/* roles */
+.s.roles2{grid-template-rows:minmax(0,36%) minmax(0,1fr)}
+.s.roles2 .disc{height:88%;box-shadow:0 0 0 10px #fff,0 0 0 26px rgba(14,128,152,.08)}
+.roles .av{flex:none;width:46px;height:46px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px var(--teal-50)}
+.roles .av img{width:100%;height:100%;object-fit:cover}
+/* specialties */
+.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;width:100%}
+.chip{display:grid;justify-items:center;gap:5px;padding:10px 4px;border-radius:var(--r-lg);border:1.5px solid transparent;background:var(--white);color:var(--ink);font:600 12.5px/1.3 var(--font);text-align:center;cursor:pointer;box-shadow:var(--shadow-2);transition:background var(--fast) var(--ease),border-color var(--fast) var(--ease)}
+.chip i{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--teal-50);color:var(--teal);font-size:20px;transition:background var(--fast) var(--ease),color var(--fast) var(--ease)}
+.chip[aria-pressed="true"]{border-color:var(--teal)}
+.chip[aria-pressed="true"] i{background:var(--teal);color:var(--white)}
+.chipd{display:flex;align-items:center;gap:8px;width:100%;min-height:42px;margin:0;padding:8px 12px;border-radius:var(--r-md);background:rgba(255,255,255,.7);font-size:13.5px;color:var(--teal-deep);font-weight:500}
+.chipd i{color:var(--teal);font-size:18px;flex:none}
+/* insurance marquee */
+.marquee{display:grid;gap:7px;width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq{overflow:hidden;direction:ltr}
+.mq-in{display:flex;gap:7px;width:max-content;animation:mq 26s linear infinite}
+.mq.rev .mq-in{animation-direction:reverse;animation-duration:30s}
+.marquee .lg{flex:none;width:128px;height:50px;border:0}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 3.5px))}}
+@media (prefers-reduced-motion:reduce){ .mq-in{animation:none;flex-wrap:wrap;width:auto} .mq-in [aria-hidden]{display:none} .clockwrap i{animation:none} }
+.s.ins2 .callout{background:rgba(255,255,255,.12);color:var(--white);box-shadow:none;border:1px solid rgba(255,255,255,.16)}
+.s.ins2 .callout>i{background:var(--white)}
+/* book */
+.s.app .opt{padding:12px 6px}
+/* app service screens */
+.en2{display:none;font-size:.55em;font-weight:500;opacity:.6;letter-spacing:.02em}
+:root[lang="ar"] .en2{display:inline-block}
+@media (max-width:899px) and (max-height:720px){
+  .s.cover3{grid-template-rows:minmax(0,34%) minmax(0,1fr)}
+  .s.hours2,.s.team2{grid-template-rows:minmax(0,32%) minmax(0,1fr)}
+  .s.roles2{grid-template-rows:minmax(0,28%) minmax(0,1fr)}
+  .chip{padding:7px 4px} .chip i{width:32px;height:32px;font-size:17px}
+  .marquee .lg{height:42px;width:112px}
+  .stats.s4 .stat{padding:7px 4px} .stats.s4 .stat b{font-size:19px}
+  .s.team2 p.sm{display:none}
+  .s.feat .tile small{display:none} .s.feat .tile i{grid-row:auto}
+  .roles .av{width:40px;height:40px}
+}
+@media (max-width:899px) and (max-height:610px){
+  .s.cover3{grid-template-rows:minmax(0,26%) minmax(0,1fr)} .s.cover3 .swipe{display:none}
+  .s.hours2,.s.team2{grid-template-rows:minmax(0,24%) minmax(0,1fr)}
+  .s.roles2{grid-template-rows:minmax(0,20%) minmax(0,1fr)}
+  .s.spec2 p.sm,.s.ins2 p.sm,.s.hours2 p.sm{display:none}
+  .clockwrap i{width:34px;height:34px;font-size:19px}
+  .roles small{display:none}
+}
+@media (min-width:900px){
+  .s.cover3,.s.hours2,.s.team2,.s.roles2{grid-template-rows:minmax(0,1fr)}
+  .clockwrap{height:auto;width:min(80%,320px)}
+  .s.roles2 .disc{height:auto;width:min(78%,340px)}
+  .chips{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+.s.yt{grid-template-rows:minmax(0,44%) minmax(0,1fr)}
+.s.yt .art{display:grid;place-items:center;padding:56px 22px 8px}
+.s.yt .video{width:100%;max-width:460px;aspect-ratio:16/9;height:auto;box-shadow:0 0 0 6px rgba(255,255,255,.12),0 24px 48px rgba(4,30,36,.5)}
+.s.yt .video img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+.s.yt .cap i.ph-youtube-logo{color:#ff3b30;font-size:18px}
+@media (max-width:899px) and (max-height:610px){ .s.yt{grid-template-rows:minmax(0,36%) minmax(0,1fr)} .s.yt p{font-size:14px} }
+@media (min-width:900px){ .s.yt{grid-template-rows:minmax(0,1fr)} }
 </style>
 <!--BODY-->
 <div class="stage">
@@ -576,8 +666,8 @@ html,body{overscroll-behavior:none}
     </header>
 
     <!-- 1 Cover -->
-    <section class="s bg-teal haspulse cover2" data-chrome="dark" data-ch="top">
-      <div class="art"><figure class="pcard"><img src="{{IMG:storefront.webp}}" alt="TADAWA Medical Center in Tafileh" data-t-alt="storeAlt" width="800" height="450"></figure></div>
+    <section class="s bleed haspulse cover3" data-chrome="dark" data-ch="top">
+      <div class="art"><img class="photo" src="{{IMG:storefront.webp}}" alt="TADAWA Medical Center in Tafileh" data-t-alt="storeAlt" width="800" height="450" style="object-position:50% 40%"></div>
       <div class="tx">
         <span class="badge"><i class="ph-fill ph-map-pin"></i><span data-t="coverTag">Tafileh center guide</span></span>
         <span class="co" data-t="coverCo">TADAWA Medical Center in Tafileh</span>
@@ -603,11 +693,11 @@ html,body{overscroll-behavior:none}
     </section>
 
     <!-- 3 What you get -->
-    <section class="s bg-teal noart" data-chrome="dark">
-      <div class="art"></div>
+    <section class="s full dark tall feat" style="--c:#0d6474" data-chrome="dark">
+      <img class="bgimg" src="{{IMG:bg-cover.webp}}" alt="" width="720" height="1280"><div class="art"></div>
       <div class="tx">
         <span class="eyebrow" data-t="fEy">Welcome</span>
-        <h2 data-t="fH">Everything your family needs, close by</h2>
+        <h2 data-t="fH">Everything your family needs, <em>close by</em></h2>
         <div class="tiles">
           <div class="tile"><i class="ph-fill ph-users-three"></i><b data-t="f1h">A family doctor who knows you</b><small data-t="f1p">Ongoing care for every member of the family</small></div>
           <div class="tile"><i class="ph-fill ph-stethoscope"></i><b data-t="f2h">Specialists come to you</b><small data-t="f2p">Specialists visit the center during the week</small></div>
@@ -618,39 +708,41 @@ html,body{overscroll-behavior:none}
     </section>
 
     <!-- 4 Hours -->
-    <section class="s bg-sand hours" data-chrome="light" data-ch="hours" data-id="hours">
-      <div class="art">
-        <svg class="clock" viewBox="0 0 220 220" role="img" aria-label="Open from 8 am to midnight" data-t-aria="clockAlt">
-          <circle cx="110" cy="110" r="84" fill="#fff" stroke="#e6e8ee" stroke-width="18"></circle>
-          <circle class="arc" cx="110" cy="110" r="84" fill="none" stroke="#0e8098" stroke-width="18" stroke-linecap="round" stroke-dasharray="351.86 527.79" stroke-dashoffset="-175.93" transform="rotate(-90 110 110)"></circle>
-          <g class="ticks" fill="#8b8789" font-size="11" font-weight="600" text-anchor="middle" font-family="Readex Pro, sans-serif">
-            <text x="110" y="47">0</text><text x="176" y="114">6</text><text x="110" y="181">12</text><text x="44" y="114">18</text>
-          </g>
-          <circle cx="182.75" cy="152" r="7" fill="#115e6d"></circle><circle cx="110" cy="26" r="7" fill="#115e6d"></circle>
-          <text x="110" y="104" text-anchor="middle" font-family="Readex Pro, sans-serif" font-weight="700" font-size="22" fill="#231f20">8:00 – 12:00</text>
-          <text class="cl-sub" x="110" y="126" text-anchor="middle" font-size="11.5" fill="#5b5658" data-t="clockSub">am to midnight</text>
-        </svg>
+    <section class="s bg-deep hours2" data-chrome="dark" data-ch="hours" data-id="hours">
+      <div class="art rings">
+        <div class="clockwrap">
+          <i class="ph-fill ph-sun sun"></i><i class="ph-fill ph-moon-stars moon"></i>
+          <svg class="clock" viewBox="0 0 220 220" role="img" aria-label="Open from 8 am to midnight" data-t-aria="clockAlt">
+            <circle cx="110" cy="110" r="84" fill="#fff" stroke="#dcedf1" stroke-width="18"></circle>
+            <circle class="arc" cx="110" cy="110" r="84" fill="none" stroke="#0e8098" stroke-width="18" stroke-linecap="round" stroke-dasharray="351.86 527.79" stroke-dashoffset="-175.93" transform="rotate(-90 110 110)"></circle>
+            <g class="ticks" fill="#8b8789" font-size="11" font-weight="600" text-anchor="middle" font-family="Readex Pro, sans-serif">
+              <text x="110" y="47">0</text><text x="176" y="114">6</text><text x="110" y="181">12</text><text x="44" y="114">18</text>
+            </g>
+            <circle cx="182.75" cy="152" r="7" fill="#115e6d"></circle><circle cx="110" cy="26" r="7" fill="#115e6d"></circle>
+            <text x="110" y="104" text-anchor="middle" font-family="Readex Pro, sans-serif" font-weight="700" font-size="22" fill="#231f20">8:00 – 12:00</text>
+            <text class="cl-sub" x="110" y="126" text-anchor="middle" font-size="11.5" fill="#5b5658" data-t="clockSub">am to midnight</text>
+          </svg>
+        </div>
       </div>
       <div class="tx">
         <span class="eyebrow" data-t="hEy">When we're open</span>
         <h2 data-t="hH">Opening <em>hours</em></h2>
-        <p data-t="hP">Our doors are open every day, from 8:00 in the morning until midnight.</p>
+        <p class="sm" data-t="hP">Our doors are open every day, from 8:00 in the morning until midnight.</p>
         <div class="days" aria-label="Open every day" data-t-aria="daysAlt">
           <span data-t="d1">Sat</span><span data-t="d2">Sun</span><span data-t="d3">Mon</span><span data-t="d4">Tue</span><span data-t="d5">Wed</span><span data-t="d6">Thu</span><span data-t="d7">Fri</span>
         </div>
-        <small class="muted" data-t="hAll">Every day of the week, including Friday</small>
-        <div class="callout"><i class="ph-fill ph-moon-stars"></i><span><b data-t="hNightH">After midnight?</b> <span data-t="hNightP">A TADAWA doctor is with you around the clock through Treat Me Now in the app.</span></span></div>
+        <button type="button" class="callout" data-jump="now"><i class="ph-fill ph-moon-stars"></i><span><b data-t="hNightH">After midnight?</b> <span data-t="hNightP">A TADAWA doctor is with you around the clock through Treat Me Now in the app.</span></span></button>
       </div>
     </section>
 
     <!-- 5 Team -->
-    <section class="s bg-deep team" data-chrome="dark" data-ch="team">
-      <div class="art"><img class="teamimg" src="{{IMG:team.webp}}" alt="TADAWA family doctors" data-t-alt="teamAlt" width="770" height="720"></div>
+    <section class="s bleed team2" data-chrome="dark" data-ch="team">
+      <div class="art"><img class="photo" src="{{IMG:team.webp}}" alt="TADAWA family doctors" data-t-alt="teamAlt" width="770" height="720" style="object-position:50% 30%"></div>
       <div class="tx">
         <span class="eyebrow" data-t="tEy">Who treats you</span>
         <h2 data-t="tH">Our medical team</h2>
         <p class="sm" data-t="tP">A large team of skilled, experienced doctors: family medicine specialists, general practitioners and nurses, working together to follow your health from the first visit.</p>
-        <div class="stats">
+        <div class="stats s4">
           <div class="stat"><b>+15</b><span data-t="st1">Family medicine specialists</span></div>
           <div class="stat"><b>+40</b><span data-t="st2">Healthcare staff in the TADAWA team</span></div>
           <div class="stat"><b>24/7</b><span data-t="st3">A doctor available through the app</span></div>
@@ -660,34 +752,37 @@ html,body{overscroll-behavior:none}
     </section>
 
     <!-- 6 Roles -->
-    <section class="s bg-white noart" data-chrome="light">
-      <div class="art"></div>
+    <section class="s bg-tint roles2" data-chrome="light">
+      <div class="art rings"><div class="disc"><img src="{{IMG:doctor-f.webp}}" alt="" width="640" height="800" style="object-position:50% 20%"></div></div>
       <div class="tx">
         <span class="eyebrow" data-t="rEy">Our medical team</span>
         <h2 data-t="rH">Family medicine <em>specialists</em></h2>
         <ol class="steplist roles">
-          <li><span class="sn"><i class="ph-fill ph-stethoscope"></i></span><span class="st"><b data-t="r1h">Family medicine specialists</b><small data-t="r1p">Diagnosis and follow-up for every member of the family, from children to the elderly</small></span></li>
-          <li><span class="sn"><i class="ph-fill ph-user-circle"></i></span><span class="st"><b data-t="r2h">General practitioners</b><small data-t="r2p">Here to see you throughout opening hours</small></span></li>
-          <li><span class="sn"><i class="ph-fill ph-first-aid-kit"></i></span><span class="st"><b data-t="r3h">Nursing and reception</b><small data-t="r3p">Caring for you, and handling bookings and insurance questions</small></span></li>
+          <li><span class="av"><img src="{{IMG:av2.webp}}" alt="" width="160" height="160"></span><span class="st"><b data-t="r1h">Family medicine specialists</b><small data-t="r1p">Diagnosis and follow-up for every member of the family, from children to the elderly</small></span></li>
+          <li><span class="av"><img src="{{IMG:av1.webp}}" alt="" width="160" height="160"></span><span class="st"><b data-t="r2h">General practitioners</b><small data-t="r2p">Here to see you throughout opening hours</small></span></li>
+          <li><span class="av"><img src="{{IMG:av3.webp}}" alt="" width="160" height="160"></span><span class="st"><b data-t="r3h">Nursing and reception</b><small data-t="r3p">Caring for you, and handling bookings and insurance questions</small></span></li>
         </ol>
       </div>
     </section>
 
     <!-- 7 Specialties -->
-    <section class="s bg-tint noart" data-chrome="light" data-ch="spec" data-id="spec">
-      <div class="art"></div>
+    <section class="s full tall spec2" style="--c:#d5e8ef" data-chrome="light" data-ch="spec" data-id="spec">
+      <img class="bgimg" src="{{IMG:bg-referral.webp}}" alt="" width="720" height="1280"><div class="art"></div>
       <div class="tx">
         <span class="eyebrow" data-t="sEy">Visiting specialists</span>
         <h2 data-t="sH">Specialties at <em>the center</em></h2>
         <p class="sm" data-t="sP">Alongside family medicine, specialists in these fields visit the center:</p>
-        <div class="grid2">
-          <div class="tile"><i class="ph-fill ph-eye"></i><b data-t="sp1h">Eyes</b><small data-t="sp1p">Eye tests and eye conditions</small></div>
-          <div class="tile"><i class="ph-fill ph-heartbeat"></i><b data-t="sp2h">Heart and arteries</b><small data-t="sp2p">ECG and echo on clinic day</small></div>
-          <div class="tile"><i class="ph-fill ph-wind"></i><b data-t="sp3h">Chest and breathing</b><small data-t="sp3p">Lung function tests, asthma and allergies</small></div>
-          <div class="tile"><i class="ph-fill ph-brain"></i><b data-t="sp4h">Brain and nerves</b><small data-t="sp4p">EEG and nerve tests, headaches and migraine</small></div>
-          <div class="tile"><i class="ph-fill ph-bandaids"></i><b data-t="sp5h">Surgery</b><small data-t="sp5p">Surgical consultations and follow-up</small></div>
-          <div class="tile"><i class="ph-fill ph-person-simple-walk"></i><b data-t="sp6h">Rehab and joints</b><small data-t="sp6p">Back and joint pain, rehabilitation therapy</small></div>
+        <div class="chips">
+          <button type="button" class="chip" aria-pressed="true" data-d="sp1p"><i class="ph-fill ph-eye"></i><span data-t="sp1h">Eyes</span></button>
+          <button type="button" class="chip" aria-pressed="false" data-d="sp2p"><i class="ph-fill ph-heartbeat"></i><span data-t="sp2h">Heart and arteries</span></button>
+          <button type="button" class="chip" aria-pressed="false" data-d="sp3p"><i class="ph-fill ph-wind"></i><span data-t="sp3h">Chest and breathing</span></button>
+          <button type="button" class="chip" aria-pressed="false" data-d="sp4p"><i class="ph-fill ph-brain"></i><span data-t="sp4h">Brain and nerves</span></button>
+          <button type="button" class="chip" aria-pressed="false" data-d="sp5p"><i class="ph-fill ph-bandaids"></i><span data-t="sp5h">Surgery</span></button>
+          <button type="button" class="chip" aria-pressed="false" data-d="sp6p"><i class="ph-fill ph-person-simple-walk"></i><span data-t="sp6h">Rehab and joints</span></button>
         </div>
+        <p class="chipd" id="chipd" aria-live="polite"><i class="ph-fill ph-info"></i><span id="chipdT"></span></p>
+        <span class="hide" data-t="sp1p">Eye tests and eye conditions</span><span class="hide" data-t="sp2p">ECG and echo on clinic day</span><span class="hide" data-t="sp3p">Lung function tests, asthma and allergies</span>
+        <span class="hide" data-t="sp4p">EEG and nerve tests, headaches and migraine</span><span class="hide" data-t="sp5p">Surgical consultations and follow-up</span><span class="hide" data-t="sp6p">Back and joint pain, rehabilitation therapy</span>
       </div>
     </section>
 
@@ -702,8 +797,7 @@ html,body{overscroll-behavior:none}
           <a class="btn btn-primary" href="https://wa.me/962793381119" target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo"></i><span data-t="wa">WhatsApp</span></a>
           <a class="btn btn-secondary" href="tel:+962793381119"><i class="ph-fill ph-phone"></i><span data-t="callAsk">Call and ask</span></a>
         </div>
-        <p class="sm fbp" data-t="fbP">We also post the specialist schedules on the Tafileh center's Facebook page. Follow us to stay up to date.</p>
-        <a class="link fb" href="https://www.facebook.com/profile.php?id=61590774086900" target="_blank" rel="noopener"><i class="ph-fill ph-facebook-logo"></i><span class="t"><b data-t="fbH">Follow our Facebook page</b></span><i class="ph ph-arrow-up-right flip"></i></a>
+        <a class="link fb" href="https://www.facebook.com/profile.php?id=61590774086900" target="_blank" rel="noopener"><i class="ph-fill ph-facebook-logo"></i><span class="t"><b data-t="fbH">Follow our Facebook page</b><small data-t="fbS2">We post the specialist schedules there every week</small></span><i class="ph ph-arrow-up-right flip"></i></a>
       </div>
     </section>
 
@@ -723,35 +817,31 @@ html,body{overscroll-behavior:none}
     </section>
 
     <!-- 10 Insurance -->
-    <section class="s bg-white noart" data-chrome="light" data-ch="insurance" data-id="insurance">
-      <div class="art"></div>
+    <section class="s full dark low ins2" style="--c:#1b6371" data-chrome="dark" data-ch="insurance" data-id="insurance">
+      <img class="bgimg" src="{{IMG:bg-benefit.webp}}" alt="" width="720" height="1280"><div class="art"></div>
       <div class="tx">
         <span class="eyebrow" data-t="iEy">Your insurance is accepted</span>
         <h2 data-t="iH">Accepted <em>insurance</em></h2>
         <p class="sm" data-t="iP">We work with ten insurance and medical claims companies. Bring your insurance card and we will take care of the rest.</p>
-        <div class="logos">
-          <span class="lg"><img src="{{IMG:logo-medexa.png}}" alt="Medexa" data-t-alt="lg1"></span>
-          <span class="lg"><img src="{{IMG:logo-mednet.png}}" alt="Mednet" data-t-alt="lg2"></span>
-          <span class="lg"><img src="{{IMG:logo-medservice.png}}" alt="MedService" data-t-alt="lg3"></span>
-          <span class="lg"><img src="{{IMG:logo-newton.png}}" alt="Newton" data-t-alt="lg4"></span>
-          <span class="lg"><img src="{{IMG:logo-nathealth.png}}" alt="NatHealth" data-t-alt="lg5"></span>
-          <span class="lg"><img src="{{IMG:logo-omnicare.png}}" alt="Omni Care" data-t-alt="lg6"></span>
-          <span class="lg"><img src="{{IMG:logo-gig.png}}" alt="Gulf Insurance Group" data-t-alt="lg7"></span>
-          <span class="lg"><img src="{{IMG:logo-solidarity.png}}" alt="Solidarity First Insurance" data-t-alt="lg8"></span>
-          <span class="lg"><img src="{{IMG:logo-jba.png}}" alt="Jordan Bar Association" data-t-alt="lg9"></span>
-          <span class="lg"><img src="{{IMG:logo-euroarab.png}}" alt="Euro Arab Insurance Group" data-t-alt="lg10"></span>
-        </div>
+        <div class="marquee" role="list"><div class="mq"><div class="mq-in"><span class="lg"><img src="{{IMG:logo-medexa.png}}" alt="Medexa" data-t-alt="lg1"></span><span class="lg"><img src="{{IMG:logo-mednet.png}}" alt="Mednet" data-t-alt="lg2"></span><span class="lg"><img src="{{IMG:logo-medservice.png}}" alt="MedService" data-t-alt="lg3"></span><span class="lg"><img src="{{IMG:logo-newton.png}}" alt="Newton" data-t-alt="lg4"></span><span class="lg"><img src="{{IMG:logo-nathealth.png}}" alt="NatHealth" data-t-alt="lg5"></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-medexa.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-mednet.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-medservice.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-newton.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-nathealth.png}}" alt=""></span></div></div><div class="mq rev"><div class="mq-in"><span class="lg"><img src="{{IMG:logo-omnicare.png}}" alt="Omni Care" data-t-alt="lg6"></span><span class="lg"><img src="{{IMG:logo-gig.png}}" alt="Gulf Insurance Group" data-t-alt="lg7"></span><span class="lg"><img src="{{IMG:logo-solidarity.png}}" alt="Solidarity First Insurance" data-t-alt="lg8"></span><span class="lg"><img src="{{IMG:logo-jba.png}}" alt="Jordan Bar Association" data-t-alt="lg9"></span><span class="lg"><img src="{{IMG:logo-euroarab.png}}" alt="Euro Arab Insurance Group" data-t-alt="lg10"></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-omnicare.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-gig.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-solidarity.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-jba.png}}" alt=""></span><span class="lg" aria-hidden="true"><img src="{{IMG:logo-euroarab.png}}" alt=""></span></div></div></div>
         <a class="callout lnk" href="tel:+962793381119"><i class="ph-fill ph-phone-call"></i><span data-t="iNote">Not sure your insurance covers it? Call reception before your visit and we will check for you.</span></a>
       </div>
     </section>
 
     <!-- 11 How to book -->
-    <section class="s full dark" style="--c:#1a5e6e" data-chrome="dark" data-ch="book" data-id="book">
-      <img class="bgimg" src="{{IMG:bg-download.webp}}" alt="" width="720" height="1280"><div class="art"></div>
+    <section class="s bg-deep app" data-chrome="dark" data-ch="book" data-id="book">
+      <div class="art rings">
+        <div class="phone2">
+          <img id="shot" src="{{IMG:phone-ar.webp}}" data-en="{{IMG:phone-en.webp}}" data-ar="{{IMG:phone-ar.webp}}" alt="The TADAWA app home screen" data-t-alt="shotCap" width="1048" height="1480">
+          <button type="button" class="spot" data-pos="1" data-jump="now" aria-label="Treat Me Now" data-t-aria="a1h"></button>
+          <button type="button" class="spot" data-pos="2" data-jump="clinic" aria-label="Clinic visit" data-t-aria="a3h"></button>
+          <button type="button" class="spot" data-pos="3" data-jump="remote" aria-label="Remote visit" data-t-aria="a2h"></button>
+        </div>
+      </div>
       <div class="tx">
         <span class="eyebrow" data-t="kEy">Your first step</span>
         <h2 data-t="kH">How do you <em>book?</em></h2>
-        <p data-t="kP">Book whichever way is easiest for you.</p>
+        <p class="sm" data-t="kP">Book whichever way is easiest for you.</p>
         <div class="opts">
           <a class="opt" href="https://qrfy.io/p/BxlzX9Y87q" target="_blank" rel="noopener"><i class="ph-fill ph-device-mobile"></i><span data-t="oApp">The app</span></a>
           <a class="opt" href="https://wa.me/962793381119" target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo"></i><span data-t="wa">WhatsApp</span></a>
@@ -760,21 +850,40 @@ html,body{overscroll-behavior:none}
       </div>
     </section>
 
-    <!-- 12 App services -->
-    <section class="s bg-deep noart" data-chrome="dark">
-      <div class="art"></div>
+    <!-- 12 Treat Me Now -->
+    <section class="s full" style="--c:#d4e7ec" data-chrome="light" data-ch="app" data-id="now">
+      <img class="bgimg" src="{{IMG:bg-now.webp}}" alt="" width="720" height="1280"><div class="art"></div>
       <div class="tx">
-        <span class="eyebrow" data-t="aEy">Or book yourself in the TADAWA app</span>
-        <h2 data-t="aH">Choose the service <em>that suits you</em></h2>
-        <div class="svcl">
-          <div class="svc"><i class="ph-fill ph-phone"></i><span class="tg" data-t="a1t">Urgent case</span><b><span data-t="a1h">Treat Me Now</span> <span class="lat en">Treat Me Now</span></b><small data-t="a1p">Talk right away to an available doctor at the tap of a button, day or night, with no appointment.</small><a class="more" href="https://qrfy.io/p/BxlzX9Y87q" target="_blank" rel="noopener"><span data-t="a1a">Talk to a doctor now</span><i class="ph ph-arrow-right flip"></i></a></div>
-          <div class="svc"><i class="ph-fill ph-video-camera"></i><span class="tg" data-t="a2t">On your schedule</span><b><span data-t="a2h">Remote visit</span> <span class="lat en">Remote Visit</span></b><small data-t="a2p">For routine check-ups and non-urgent cases, at a time that suits you.</small><a class="more" href="https://qrfy.io/p/BxlzX9Y87q" target="_blank" rel="noopener"><span data-t="a2a">Book your appointment</span><i class="ph ph-arrow-right flip"></i></a></div>
-          <div class="svc"><i class="ph-fill ph-hospital"></i><span class="tg" data-t="a3t">Physical examination</span><b><span data-t="a3h">Clinic visit</span> <span class="lat en">Office Visit</span></b><small data-t="a3p">When you need an examination, a lab test or an ECG, we see you at the center.</small><button type="button" class="more" data-jump="contact"><span data-t="a3a">How to reach us</span><i class="ph ph-arrow-right flip"></i></button></div>
-        </div>
+        <span class="badge"><i class="ph-fill ph-lightning"></i><span data-t="a1t">Urgent case</span></span>
+        <h2><span data-t="a1h">Treat Me Now</span> <span class="lat en2">Treat Me Now</span></h2>
+        <p data-t="a1p">Talk right away to an available doctor at the tap of a button, day or night, with no appointment.</p>
+        <a class="btn btn-primary" href="https://qrfy.io/p/BxlzX9Y87q" target="_blank" rel="noopener"><i class="ph-fill ph-phone-call"></i><span data-t="a1a">Talk to a doctor now</span></a>
       </div>
     </section>
 
-    <!-- 13 Tour + app -->
+    <!-- 13 Remote visit -->
+    <section class="s full dark" style="--c:#1d6170" data-chrome="dark" data-id="remote">
+      <img class="bgimg" src="{{IMG:bg-remote.webp}}" alt="" width="720" height="1280"><div class="art"></div>
+      <div class="tx">
+        <span class="badge"><i class="ph-fill ph-calendar-check"></i><span data-t="a2t">On your schedule</span></span>
+        <h2><span data-t="a2h">Remote visit</span> <span class="lat en2">Remote Visit</span></h2>
+        <p data-t="a2p">For routine check-ups and non-urgent cases, at a time that suits you.</p>
+        <a class="btn btn-inverse" href="https://qrfy.io/p/BxlzX9Y87q" target="_blank" rel="noopener"><i class="ph-fill ph-calendar-plus"></i><span data-t="a2a">Book your appointment</span></a>
+      </div>
+    </section>
+
+    <!-- 14 Clinic visit -->
+    <section class="s full" style="--c:#d7eaf1" data-chrome="light" data-id="clinic">
+      <img class="bgimg" src="{{IMG:bg-activate.webp}}" alt="" width="720" height="1280"><div class="art"></div>
+      <div class="tx">
+        <span class="badge"><i class="ph-fill ph-stethoscope"></i><span data-t="a3t">Physical examination</span></span>
+        <h2><span data-t="a3h">Clinic visit</span> <span class="lat en2">Office Visit</span></h2>
+        <p data-t="a3p">When you need an examination, a lab test or an ECG, we see you at the center.</p>
+        <button type="button" class="btn btn-secondary" data-jump="contact"><i class="ph-fill ph-map-pin"></i><span data-t="a3a">How to reach us</span></button>
+      </div>
+    </section>
+
+    <!-- 15 Tour + app -->
     <section class="s bg-white tall vid" data-chrome="light" data-ch="tour">
       <div class="art">
         <a class="video" href="https://drive.google.com/file/d/1wT2hKYpYhSJre1Ke6RqVSbyzM8ajwSoF/view" target="_blank" rel="noopener">
@@ -794,7 +903,24 @@ html,body{overscroll-behavior:none}
       </div>
     </section>
 
-    <!-- 14 Location -->
+    <!-- 15b TADAWA video -->
+    <section class="s bg-deep yt" data-chrome="dark" data-ch="ytv">
+      <div class="art rings">
+        <a class="video" href="https://www.youtube.com/watch?v=W5jCTL_hdlc" target="_blank" rel="noopener">
+          <img src="{{IMG:video-poster.webp}}" alt="" width="960" height="540">
+          <span class="playb"><i class="ph-fill ph-play"></i></span>
+          <span class="cap"><i class="ph-fill ph-youtube-logo"></i><span data-t="ytCap">Watch on YouTube</span><i class="ph ph-arrow-up-right flip"></i></span>
+        </a>
+      </div>
+      <div class="tx">
+        <span class="eyebrow" data-t="ytEy">Get to know us</span>
+        <h2 data-t="ytH">What is <em>TADAWA?</em></h2>
+        <p data-t="ytP">A short video explaining the TADAWA system and how you get care: in the app, remotely, or at the center.</p>
+        <a class="btn btn-inverse" href="https://www.youtube.com/watch?v=W5jCTL_hdlc" target="_blank" rel="noopener"><i class="ph-fill ph-play-circle"></i><span data-t="ytBtn">Watch the video</span></a>
+      </div>
+    </section>
+
+    <!-- 16 Location -->
     <section class="s full tall" style="--c:#f6ebdd" data-chrome="light" data-ch="contact" data-id="contact">
       <img class="bgimg" src="{{IMG:bg-clinic.webp}}" alt="" width="720" height="1280"><div class="art"></div>
       <div class="tx">
@@ -805,6 +931,7 @@ html,body{overscroll-behavior:none}
             <a class="ib line" target="_blank" rel="noopener" aria-label="Open the map" data-t-aria="openMap" href="https://www.google.com/maps/place/Tadawa+Medical+Center+-+%D9%85%D8%B1%D9%83%D8%B2+%D8%AA%D8%AF%D9%88%D8%A7%D9%89+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%E2%80%AD/@30.8427129,35.6452999,17z/data=!3m1!4b1!4m6!3m5!1s0x150395ae6ad2dec9:0x348797266d71f829!8m2!3d30.8427129!4d35.6478802!16s/g/11zblm53fh"><i class="ph-fill ph-map-trifold"></i></a>
             <a class="ib fill" href="tel:+962793381119" aria-label="Call the center" data-t-aria="callCenter"><i class="ph-fill ph-phone"></i></a></div>
         </div>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Tadawa+Medical+Center+-+%D9%85%D8%B1%D9%83%D8%B2+%D8%AA%D8%AF%D9%88%D8%A7%D9%89+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%E2%80%AD/@30.8427129,35.6452999,17z/data=!3m1!4b1!4m6!3m5!1s0x150395ae6ad2dec9:0x348797266d71f829!8m2!3d30.8427129!4d35.6478802!16s/g/11zblm53fh"><i class="ph-fill ph-navigation-arrow"></i><span data-t="dirs">Get directions</span></a>
         <div class="links">
           <a class="link" href="https://wa.me/962793381119" target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo"></i><span class="t"><b data-t="wa">WhatsApp</b><small data-t="waP">To book or ask a question</small></span><i class="ph ph-arrow-up-right flip"></i></a>
           <a class="link" href="https://www.facebook.com/profile.php?id=61590774086900" target="_blank" rel="noopener"><i class="ph-fill ph-facebook-logo"></i><span class="t"><b data-t="fb">Facebook</b><small data-t="fbS">Specialist schedules and news</small></span><i class="ph ph-arrow-up-right flip"></i></a>
@@ -812,7 +939,7 @@ html,body{overscroll-behavior:none}
       </div>
     </section>
 
-    <!-- 15 Contact -->
+    <!-- 17 Contact -->
     <section class="s bg-teal noart haspulse" data-chrome="dark">
       <div class="art"></div>
       <div class="tx" style="align-content:center">
@@ -849,8 +976,10 @@ html,body{overscroll-behavior:none}
           <li><button type="button" data-ch="services"><span class="h"><i class="ph-fill ph-first-aid-kit"></i><span>05</span></span><span data-t="toc5">Center services</span></button></li>
           <li><button type="button" data-ch="insurance"><span class="h"><i class="ph-fill ph-shield-check"></i><span>06</span></span><span data-t="toc6">Accepted insurance</span></button></li>
           <li><button type="button" data-ch="book"><span class="h"><i class="ph-fill ph-calendar-check"></i><span>07</span></span><span data-t="toc7">How do you book?</span></button></li>
-          <li><button type="button" data-ch="tour"><span class="h"><i class="ph-fill ph-play-circle"></i><span>08</span></span><span data-t="toc8">A tour of the center</span></button></li>
-          <li><button type="button" data-ch="contact"><span class="h"><i class="ph-fill ph-map-pin"></i><span>09</span></span><span data-t="toc9">Location and contact</span></button></li>
+          <li><button type="button" data-ch="app"><span class="h"><i class="ph-fill ph-device-mobile"></i><span>08</span></span><span data-t="toc10">Services in the app</span></button></li>
+          <li><button type="button" data-ch="tour"><span class="h"><i class="ph-fill ph-play-circle"></i><span>09</span></span><span data-t="toc8">A tour of the center</span></button></li>
+          <li><button type="button" data-ch="ytv"><span class="h"><i class="ph-fill ph-youtube-logo"></i><span>10</span></span><span data-t="toc11">What is TADAWA?</span></button></li>
+          <li><button type="button" data-ch="contact"><span class="h"><i class="ph-fill ph-map-pin"></i><span>11</span></span><span data-t="toc9">Location and contact</span></button></li>
         </ol>
         <div class="quick">
           <a href="tel:+962793381119"><i class="ph-fill ph-phone"></i><span data-t="callNow">Call now</span></a>
@@ -906,10 +1035,12 @@ html,body{overscroll-behavior:none}
     dlH:'حمّلوا تطبيق تداوىٰ', dlP:'أنشئوا ملفكم الطبي، وكونوا جاهزين قبل زيارتكم.', scan:'امسحوا الرمز لتحميل التطبيق',
     lEy:'زورونا', lH:'الموقع <em>والتواصل</em>', lName:'مركز تداوىٰ الطبي', lAddr:'الطفيلة، العيص، شارع المستشفى الحكومي', waP:'للحجز والاستفسار', fb:'فيسبوك', fbS:'جداول الاختصاصيين وآخر الأخبار',
     eEy:'للحجز والاستفسار، اتصال وواتساب', callNow:'اتصل الآن', foot:'مركز تداوىٰ الطبي في الطفيلة · دليل المركز',
-    toc1:'مرحبًا بكم في مركزكم', toc2:'مواعيد الدوام', toc3:'كادرنا الطبي', toc4:'التخصصات في المركز', toc5:'خدمات المركز', toc6:'التأمينات المعتمدة', toc7:'كيف تحجز موعدك؟', toc8:'جولة في المركز', toc9:'الموقع والتواصل'
+    toc1:'مرحبًا بكم في مركزكم', toc2:'مواعيد الدوام', toc3:'كادرنا الطبي', toc4:'التخصصات في المركز', toc5:'خدمات المركز', toc6:'التأمينات المعتمدة', toc7:'كيف تحجز موعدك؟', toc8:'جولة في المركز', toc9:'الموقع والتواصل', toc10:'الخدمات في التطبيق', toc11:'ما هو نظام تداوىٰ؟',
+    ytCap:'شاهدوا على يوتيوب', ytEy:'تعرّفوا علينا', ytH:'ما هو نظام <em>تداوىٰ؟</em>', ytP:'فيديو قصير يشرح نظام تداوىٰ وكيف تحصلون على الرعاية: عبر التطبيق، أو عن بعد، أو في المركز.', ytBtn:'شاهدوا الفيديو',
+    swipe:'اسحبوا أو اضغطوا للمتابعة', shotCap:'الشاشة الرئيسية لتطبيق تداوىٰ', dirs:'الاتجاهات إلى المركز', fbS2:'ننشر جداول الاختصاصيين هناك كل أسبوع'
   };
   var EN={title:document.title, copied:'Number copied', contents:'Contents', close:'Close', copyNum:'Copy number', openMap:'Open the map', callCenter:'Call the center',
-          storeAlt:'TADAWA Medical Center in Tafileh', teamAlt:'TADAWA family doctors', clockAlt:'Open from 8 am to midnight', daysAlt:'Open every day',
+          storeAlt:'TADAWA Medical Center in Tafileh', teamAlt:'TADAWA family doctors', clockAlt:'Open from 8 am to midnight', daysAlt:'Open every day', shotCap:'The TADAWA app home screen',
           next:'Next', back:'Back', start:'Start', again:'Start again'};
   var root=document.documentElement, $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -932,8 +1063,12 @@ html,body{overscroll-behavior:none}
     var lb=$('#langBtn'), other=lang==='ar'?'en':'ar';
     lb.lang=other; lb.textContent=other==='ar'?'عربي':'EN'; lb.setAttribute('aria-label',other==='ar'?'العربية':'English');
     if(save) store.set('tdw-taf-lang',lang);
+    var shot=$('#shot'); if(shot) shot.src=shot.dataset[lang];
+    var cp=$('.chip[aria-pressed="true"]'); if(cp) $('#chipdT').innerHTML=t(cp.dataset.d);
     chrome(); pulses();
   }
+  $$('.chip').forEach(function(c){ c.addEventListener('click',function(e){ e.stopPropagation();
+    $$('.chip').forEach(function(o){ o.setAttribute('aria-pressed', o===c?'true':'false'); }); $('#chipdT').innerHTML=t(c.dataset.d); }); });
   $('#langBtn').addEventListener('click',function(){ setLang(lang==='ar'?'en':'ar',true); });
 
   function chrome(){
