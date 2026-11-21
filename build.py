@@ -29,7 +29,7 @@ out = re.sub(r"\{\{([A-Z_]+)\}\}", lambda m: rep[m.group(1)], out)
 head, body = out.split("<!--BODY-->")
 os.makedirs(os.path.join(here, "dist"), exist_ok=True)
 open(os.path.join(here, "dist", "TadawaTelemedicineGuide.html"), "w", encoding="utf-8").write(head + body)
-full = ('<!doctype html>\n<html lang="en" dir="ltr">\n<head>\n<meta charset="utf-8">\n'
+full = ('<!doctype html>\n<html lang="ar" dir="rtl">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
         '<style>[hidden]{display:none!important}img{max-width:100%}</style>\n' + head + '</head>\n<body>\n' + body + '\n</body>\n</html>\n')
 open(os.path.join(here, "index.html"), "w", encoding="utf-8").write(full)
